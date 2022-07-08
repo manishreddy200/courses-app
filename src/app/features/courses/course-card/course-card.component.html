@@ -3,7 +3,7 @@
     <h3 class="course-title">{{course.title}}</h3>
     <p>{{course.description}}</p>
   </div>
-  <div style="width: 30%;">
+  <div class="course-details">
     <p><b>Authors: </b>
       <ng-container *ngFor="let author of course.authors; let last = last"><span>{{author}}</span> 
         <span *ngIf="!last">  , </span> </ng-container>

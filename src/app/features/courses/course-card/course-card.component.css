@@ -1,13 +1,33 @@
 .course-card {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 2px solid rgb(124, 223, 146);
-    display: flex;
-    justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid rgb(124, 223, 146);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .course-description {
-    width: 60%;
+  width: 60%;
 }
+
+.course-details {
+    width: 30%;
+}
+
+@media only screen and (max-width: 800px) {
+  .course-description{
+    width: 50%;
+  }
+  .course-details {
+      width: 40%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .course-description , .course-details{
+      width: 100%;
+    }
+  }
