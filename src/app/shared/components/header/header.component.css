@@ -1,0 +1,12 @@
+.header, .header-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header {
+    position: sticky;
+    border: 2px solid rgb(236, 178, 69);
+    padding: 0px 20px;
+    margin-bottom: 10px;
+}

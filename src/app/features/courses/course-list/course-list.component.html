@@ -1,0 +1,5 @@
+<ng-container *ngFor="let course of courseList">
+    <app-course-card style="height: 20vh;" [course]="course">
+        <app-button [buttonText]="'Show course'" [isEditable]="isEditable"></app-button>
+    </app-course-card>
+</ng-container>

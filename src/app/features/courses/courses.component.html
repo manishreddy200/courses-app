@@ -1,0 +1,16 @@
+<div style="margin: 20px;">
+    <app-header>
+        <div class="username">
+            <p>Dave</p>
+        </div>
+        <div class="logout-button">
+            <button>Logout</button>
+        </div>
+    </app-header>
+    <app-info class="info-component" *ngIf="!courseList.length; else courseListData">
+        <app-button [buttonText]="'Add new course'"></app-button>
+    </app-info>
+    <ng-template #courseListData>
+        <app-course-list [courseList]="courseList" [isEditable]="isEditable"></app-course-list>
+    </ng-template>
+</div>

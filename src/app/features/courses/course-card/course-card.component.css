@@ -1,0 +1,13 @@
+.course-card {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(124, 223, 146);
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-description {
+    width: 60%;
+}

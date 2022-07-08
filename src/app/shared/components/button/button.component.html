@@ -1,0 +1,10 @@
+<div class="buttons"><button class="text-button">{{ buttonText}}</button>
+    <div class="icon-buttons" *ngIf="isEditable">
+        <button>
+            <fa-icon [icon]="editIcon"></fa-icon>
+        </button>
+        <button>
+            <fa-icon [icon]="deleteIcon"></fa-icon>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="course-card">
+  <div class="course-description">
+    <h3 class="course-title">{{course.title}}</h3>
+    <p>{{course.description}}</p>
+  </div>
+  <div style="width: 30%;">
+    <p><b>Authors: </b>
+      <ng-container *ngFor="let author of course.authors; let last = last"><span>{{author}}</span> 
+        <span *ngIf="!last">  , </span> </ng-container>
+    </p>
+    <p><b>Duration: </b>{{course.duration | date: "HH:MM"}} hours</p>
+    <p><b>Created: </b>{{course.creationDate | date: "dd.MM.YYYY"}}</p>
+    <ng-content select="app-button"></ng-content>
+  </div>
+</div>
