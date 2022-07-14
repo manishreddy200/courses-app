@@ -1,1 +1,4 @@
-<p>search works!</p>
+<div class="search">
+  <input #searchInput style="width:80vw" type="text" [placeholder]="placeHolder" />
+  <button (click)="searchEvent.emit(searchInput.value)">Search</button>
+</div>
