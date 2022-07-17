@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-registration',
@@ -8,11 +10,26 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit {
   registrationForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
+    name: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   });
-  constructor() {}
+  showPassword = false;
+  eye = faEye;
+  eyeSlash = faEyeSlash
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  get name() {
+    return this.registrationForm.get('name');
+  }
+
+  get email() {
+    return this.registrationForm.get('email');
+  }
+
+  get password() {
+    return this.registrationForm.get('password');
+  }
 }

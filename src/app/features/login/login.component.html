@@ -1,13 +1,33 @@
 <div class="login-form">
   <form #loginForm="ngForm">
-    <h1>Order your drinks</h1>
+    <h1>Login</h1>
     <div class="form-control">
       <label>Email</label>
-      <input type="email" placeholder="Email" [(ngModel)]="email" />
+      <input type="email" placeholder="Email" name="email" #emailInput="ngModel" [(ngModel)]="email" required
+        appEmailValidator />
+      <div class="error-message" *ngIf="emailInput?.errors?.required && emailInput?.touched">Email is required</div>
+      <div class="error-message"
+        *ngIf="emailInput?.errors?.invalidEmail && !emailInput?.errors?.required && emailInput?.touched">Enter a valid
+        email</div>
+
     </div>
     <div class="form-control">
       <label>Password</label>
-      <input type="password" placeholder="Password" [(ngModel)]="password" />
+      <div class="password-input">
+        <input type="password" placeholder="Password" name="password" #passwordInput="ngModel" [(ngModel)]="password"
+          appTogglePassword #togglePassword="togglePassword" required />
+        <button *ngIf="!showPassword" type="button" (click)="togglePassword.showPassword(); showPassword=true">
+          <fa-icon [icon]="eye"></fa-icon>
+        </button>
+        <button *ngIf="showPassword" type="button" (click)="togglePassword.hidePassword(); showPassword=false">
+          <fa-icon [icon]="eyeSlash"></fa-icon>
+        </button>
+      </div>
+      <div class="error-message" *ngIf="passwordInput?.errors?.required && passwordInput?.touched">Password is required
+      </div>
+
     </div>
+    <button type="submit">Login</button>
   </form>
+  <p>If you don't have an account you can <a href="">Register</a></p>
 </div>

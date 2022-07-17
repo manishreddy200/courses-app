@@ -1,0 +1,47 @@
+<div class="edit-form">
+    <form [formGroup]="courseForm" class="title-form">
+        <div class="form-control title">
+            <div class="title-form-control">
+                <label>Title</label>
+                <input formControlName="title" type="text">
+                <div class="error-message" *ngIf="title?.errors?.required && title?.touched">Title is required</div>
+            </div>
+            <button>Create Course</button>
+        </div>
+        <div class="form-control">
+            <label>Description</label>
+            <textarea formControlName="description" rows="8"></textarea>
+            <div class="error-message" *ngIf="description?.errors?.required && description?.touched">Description is
+                required</div>
+        </div>
+        <div class="author-fields">
+            <form formGroupName="authorForm" class="author-form">
+                <h4>Author name</h4>
+                <div class="form-control">
+                    <label>Author name</label>
+                    <input formControlName="authorName" type="text">
+                </div>
+                <div style="text-align: center;"><button type="button" (click)="addAuthor(authorName?.value)">Create
+                        Author</button></div>
+                <h4>Duration</h4>
+                <div class="form-control">
+                    <label>Duration</label>
+                    <input formControlName="duration" type="text">
+                    <div class="error-message" *ngIf="duration?.errors?.required && duration?.touched">Duration is
+                        required</div>
+                    <div class="error-message"
+                        *ngIf="duration?.invalid && !duration?.errors?.required && duration?.touched">Enter only numeric
+                        value</div>
+                </div>
+                <p><b>Duration: </b>{{duration?.value | duration}} hours</p>
+            </form>
+            <form formArrayName="authorArray" class="author-array">
+                <h4>Authors list</h4>
+                <div *ngFor="let author of authorArray.controls; let i=index" class="form-control author-array-control">
+                    <input [formControlName]="i" type="text" [attr.disabled]="true">
+                    <button type="button">Delete Author</button>
+                </div>
+            </form>
+        </div>
+    </form>
+</div>

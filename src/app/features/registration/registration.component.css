@@ -12,7 +12,7 @@ label {
   font-weight: bold;
 }
 form {
-  width: 50%;
+  width: 40%;
 }
 
 .form-control,
@@ -27,4 +27,19 @@ label {
 
 button {
   padding: 0 10%;
+}
+
+.password-input {
+  display: flex;
+  width: 100%;
+  border: 1px solid rgba(243, 160, 86, 255);
+}
+
+.password-input input{
+  border: none;
+}
+
+.password-input button{
+  border: none;
+  padding: 1px;
 }

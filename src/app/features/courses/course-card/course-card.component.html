@@ -8,8 +8,8 @@
       <ng-container *ngFor="let author of course.authors; let last = last"><span>{{author}}</span> 
         <span *ngIf="!last">  , </span> </ng-container>
     </p>
-    <p><b>Duration: </b>{{course.duration | date: "HH:MM"}} hours</p>
-    <p><b>Created: </b>{{course.creationDate | date: "dd.MM.YYYY"}}</p>
+    <p><b>Duration: </b>{{course.duration | duration}} hours</p>
+    <p><b>Created: </b>{{course.creationDate | creationDate}}</p>
     <ng-content select="app-button"></ng-content>
   </div>
 </div>

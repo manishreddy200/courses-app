@@ -1,5 +1,7 @@
-.login-form {
+.login-form,
+form {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -7,4 +9,37 @@
 label {
   display: block;
   margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+form {
+  width: 40%;
+}
+
+.form-control,
+input,
+label {
+  width: 100%;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 0 10%;
+}
+
+.password-input {
+  display: flex;
+  width: 100%;
+  border: 1px solid rgba(243, 160, 86, 255);
+}
+
+.password-input input{
+  border: none;
+}
+
+.password-input button{
+  border: none;
+  padding: 1px;
 }

@@ -1,0 +1,60 @@
+.title-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.author-fields {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.author-fields {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.author-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.form-control , .author-form input, textarea {
+    width: 100% ;
+}
+
+.title-form-control {
+    width: 80%;
+}
+
+.title-form-control input {
+    width: 100%;
+}
+
+h4 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+.title, .author-array-control {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+  }
+
+.author-array {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.form-control {
+      margin-bottom: 20px;
+}
